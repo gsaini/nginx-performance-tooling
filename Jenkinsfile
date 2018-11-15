@@ -1,5 +1,4 @@
-JAVA_ARGS="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox
-allow-scripts; default-src 'unsafe-inline'; img-src * data:\""
+JAVA_ARGS="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'unsafe-inline'; img-src * data:\""
 
 
 pipeline {
