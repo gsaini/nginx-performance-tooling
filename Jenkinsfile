@@ -28,7 +28,7 @@ pipeline {
             }
             steps {
                 sh 'npm i -d'
-                sh 'npm run lighthouse'
+                // sh 'npm run lighthouse'
             }
             post {
                 always {
