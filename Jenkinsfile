@@ -29,7 +29,7 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
-                sh 'npm install'
+                sh 'npm i -d'
                 sh 'npm run lighthouse'
             }
             post {
