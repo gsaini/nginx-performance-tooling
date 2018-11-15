@@ -27,8 +27,6 @@ pipeline {
                 branch 'master'
             }
             steps {
-                deleteDir()
-                checkout scm
                 sh 'npm i -d'
                 sh 'npm run lighthouse'
             }
