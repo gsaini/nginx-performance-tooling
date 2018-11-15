@@ -1,3 +1,7 @@
+JAVA_ARGS="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox
+allow-scripts; default-src 'unsafe-inline'; img-src * data:\""
+
+
 pipeline {
     agent { 
         docker { image 'node:10.13' } 
@@ -13,6 +17,33 @@ pipeline {
             steps {
                 sh 'npm --version'
                 sh 'printenv'
+            }
+        }
+
+        stage('Performance Tests') {
+            agent {
+                label 'master'
+            }
+            when {
+                branch 'master'
+            }
+            steps {
+                deleteDir()
+                checkout scm
+                sh 'npm install'
+                sh 'npm run lighthouse'
+            }
+            post {
+                always {
+                publishHTML (target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: '.',
+                    reportFiles: 'lighthouse-report.html',
+                    reportName: "Lighthouse"
+                ])
+                }
             }
         }
     }
