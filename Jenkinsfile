@@ -27,10 +27,10 @@ pipeline {
 
         stage('Performance Tests') {
             agent {
-                label 'feature/ci-pipiline'
+                label 'master'
             }
             when {
-                branch 'feature/ci-pipiline'
+                branch 'master'
             }
             steps {
                 sh 'npm i -d'
