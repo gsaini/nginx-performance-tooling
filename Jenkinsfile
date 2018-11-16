@@ -24,6 +24,7 @@ pipeline {
                 deleteDir()
                 checkout scm
                 sh 'npm install -d'
+                sh 'pwd'
                 sh 'npm run lighthouse'
             }
 
