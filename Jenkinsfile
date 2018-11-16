@@ -22,10 +22,11 @@ pipeline {
         stage('test') {
             steps {
                 deleteDir()
-                sh 'cd ..'
                 checkout scm
-                sh 'npm install -d'
-                sh 'npm run lighthouse'
+                echo checkout(scm).GIT_COMMIT
+                // sh 'cd $(pwd)'
+                // sh 'npm install -d'
+                // sh 'npm run lighthouse'
             }
 
             post {
