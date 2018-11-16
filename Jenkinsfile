@@ -11,6 +11,7 @@ pipeline {
 
     options {
         // Only keep the 5 most recent builds
+        timestamps()
         buildDiscarder(logRotator(numToKeepStr:'15'))
     }
 
@@ -19,7 +20,6 @@ pipeline {
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
         sonarqubeScannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-        SONAR_ENV = withSonarQubeEnv('SonarQubeScanner')
     }
 
     stages {
