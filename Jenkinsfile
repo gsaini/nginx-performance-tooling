@@ -23,10 +23,10 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
-                echo checkout(scm).GIT_COMMIT
-                // sh 'cd $(pwd)'
-                // sh 'npm install -d'
-                // sh 'npm run lighthouse'
+                sh 'printenv'
+                sh 'cd $HOME'
+                sh 'npm install -d'
+                sh 'npm run lighthouse'
             }
 
             post {
