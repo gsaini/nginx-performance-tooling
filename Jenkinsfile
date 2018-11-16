@@ -23,10 +23,10 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
-                sh 'printenv'
-                sh 'cd $WORKSPACE'
-                sh 'npm install -d'
-                sh 'npm run lighthouse'
+                 sh """ printenv
+                cd $WORKSPACE
+                  npm install -d
+                  npm run lighthouse """
             }
 
             post {
