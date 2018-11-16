@@ -55,8 +55,6 @@ pipeline {
                 }
             }
         }
-        stage('Build'){}
-        stage('Deploy'){}
     }
 
     post {
