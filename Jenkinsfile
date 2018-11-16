@@ -13,20 +13,9 @@ pipeline {
 
     stages {
         stage('build') {
-            // steps {
-            //     sh 'npm --version'
-            //     sh 'printenv'
-            // }
-
             steps {
-                echo "Branch is ${env.BRANCH_NAME}..."
-        
-                withNPM() {
-                    echo "Performing npm build..."
-                    sh 'npm --version'
-                    sh 'printenv'
-                    sh 'npm install'
-                }
+                sh 'npm --version'
+                sh 'printenv'
             }
         }
 
@@ -62,6 +51,15 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
+            publishHTML (target: [
+              allowMissing: false,
+              alwaysLinkToLastBuild: false,
+              keepAll: true,
+              reportDir: '.',
+              reportFiles: 'lighthouse-report.html',
+              reportName: 'Lighthouse'
+            ])
+            }
         }
         failure {
             echo 'This will run only if failed'
