@@ -24,7 +24,6 @@ pipeline {
                 deleteDir()
                 checkout scm
                 sh 'printenv'
-                sh 'cd'
                 sh 'npm install -d'
                 sh 'npm run lighthouse'
             }
