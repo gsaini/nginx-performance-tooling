@@ -52,8 +52,6 @@ pipeline {
 
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
-                    sh 'printenv'
-                    sh 'current dir -> ${PWD}'
                     sh "${sonarqubeScannerHome}/bin/sonar-scanner -X"
                 }
             }
