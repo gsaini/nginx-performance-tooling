@@ -44,7 +44,7 @@ pipeline {
 
         stage('SonarQube analysis') {
             tools {
-                hudson.plugins.sonar.SonarRunnerInstallation 'SonarQube Scanner'
+                SonarQubeScanner: 'hudson.plugins.sonar.SonarRunnerInstallation'
             }
             steps {
                 withSonarQubeEnv('SonarQube Scanner') {
