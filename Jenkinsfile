@@ -50,7 +50,8 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
-                    sh "SonarQubeScanner/bin/sonar-scanner"
+                    sh 'ls'
+                    sh "sonar-scanner"
                 }
             }
         }
