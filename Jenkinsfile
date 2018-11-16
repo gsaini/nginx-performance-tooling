@@ -1,6 +1,7 @@
 // JAVA_ARGS="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'unsafe-inline'; img-src * data:\""
 // System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'unsafe-inline';")
 System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts;")
+def scannerHome = tool 'SonarQube Scanner 3.2.0.1227';
 
 pipeline {
     agent { 
@@ -46,7 +47,6 @@ pipeline {
             // tools {
             //     'hudson.plugins.sonar.SonarRunnerInstallation' 'SonarQubeScanner'
             // }
-            def scannerHome = tool 'SonarQube Scanner 3.2.0.1227';
 
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
