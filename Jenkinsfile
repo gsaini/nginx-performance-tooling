@@ -43,12 +43,11 @@ pipeline {
         // }
 
         stage('SonarQube analysis') {
-            // tools {
-            //     // sonarQube 'SonarQubeScanner'
-            // }
+            tools {
+                sonarQube 'SonarQube'
+            }
             steps {
-                sh 'printenv'
-                withSonarQubeEnv('SonarQube Scanner') {
+                withSonarQubeEnv('SonarQube') {
                     sh 'sonar-scanner'
                 }
             }
