@@ -1,0 +1,30 @@
+{
+  "name": "nginx-getting-started",
+  "version": "1.0.0",
+  "description": "nginx & jenkins configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lighthouse": "node_modules/lighthouse/lighthouse-cli/index.js --output-path=./lighthouse-report.html --quiet --chrome-flags='--headless' https://kitconcept.com/blog"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gsaini/nginx-performance-tooling.git"
+  },
+  "keywords": [
+    "nginx",
+    "jenkins",
+    "ci-pipline",
+    "http2",
+    "brotli"
+  ],
+  "author": "Gopal Saini",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gsaini/nginx-performance-tooling/issues"
+  },
+  "homepage": "https://github.com/gsaini/nginx-performance-tooling#readme",
+  "devDependencies": {
+    "lighthouse": "^4.0.0-alpha.1"
+  }
+}
