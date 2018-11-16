@@ -6,6 +6,15 @@ pipeline {
         docker { image 'node:10.13' } 
     }
 
+    steps {
+        echo "Branch is ${env.BRANCH_NAME}..."
+ 
+        withNPM(npmrcConfig:'my-custom-npmrc') {
+            echo "Performing npm build..."
+            sh 'npm install'
+        }
+    }
+
     environment {
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
@@ -19,30 +28,30 @@ pipeline {
             }
         }
 
-        stage('Performance Tests') {
-            agent {
-                label 'master'
-            }
-            when {
-                branch 'master'
-            }
-            steps {
-                sh 'npm i -d'
-                // sh 'npm run lighthouse'
-            }
-            post {
-                always {
-                publishHTML (target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: '.',
-                    reportFiles: 'lighthouse-report.html',
-                    reportName: "Lighthouse"
-                ])
-                }
-            }
-        }
+        // stage('Performance Tests') {
+        //     agent {
+        //         label 'master'
+        //     }
+        //     when {
+        //         branch 'master'
+        //     }
+        //     steps {
+        //         sh 'npm i -d'
+        //         // sh 'npm run lighthouse'
+        //     }
+        //     post {
+        //         always {
+        //         publishHTML (target: [
+        //             allowMissing: false,
+        //             alwaysLinkToLastBuild: false,
+        //             keepAll: true,
+        //             reportDir: '.',
+        //             reportFiles: 'lighthouse-report.html',
+        //             reportName: "Lighthouse"
+        //         ])
+        //         }
+        //     }
+        // }
     }
 
     post {
