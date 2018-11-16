@@ -6,15 +6,6 @@ pipeline {
         docker { image 'node:10.13' } 
     }
 
-    steps {
-        echo "Branch is ${env.BRANCH_NAME}..."
- 
-        withNPM(npmrcConfig:'my-custom-npmrc') {
-            echo "Performing npm build..."
-            sh 'npm install'
-        }
-    }
-
     environment {
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
@@ -25,6 +16,15 @@ pipeline {
             steps {
                 sh 'npm --version'
                 sh 'printenv'
+            }
+
+            steps {
+                echo "Branch is ${env.BRANCH_NAME}..."
+        
+                withNPM(npmrcConfig:'my-custom-npmrc') {
+                    echo "Performing npm build..."
+                    sh 'npm install'
+                }
             }
         }
 
