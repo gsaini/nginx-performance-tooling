@@ -33,6 +33,8 @@ pipeline {
                 branch 'master'
             }
             steps {
+                deleteDir()
+                checkout scm
                 sh 'npm i -d'
                 sh 'npm run lighthouse'
             }
@@ -42,7 +44,7 @@ pipeline {
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
-                    reportDir: '.',
+                    reportDir: './reports/lighthouse',
                     reportFiles: 'lighthouse-report.html',
                     reportName: "Lighthouse"
                 ])
