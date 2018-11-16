@@ -21,25 +21,12 @@ pipeline {
     stages {
         stage('test') {
             steps {
-                sh 'npm --version'
-                sh 'npm install'
-                sh 'printenv'
-            }
-        }
-
-        stage('Performance Tests') {
-            agent {
-                label 'master'
-            }
-            when {
-                branch 'master'
-            }
-            steps {
                 deleteDir()
                 checkout scm
-                sh 'npm install'
+                sh 'npm install -d'
                 sh 'npm run lighthouse'
             }
+
             post {
                 always {
                 publishHTML (target: [
