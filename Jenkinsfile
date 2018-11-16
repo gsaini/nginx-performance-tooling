@@ -9,7 +9,7 @@ pipeline {
 
     options {
         // Only keep the 5 most recent builds
-        buildDiscarder(logRotator(numToKeepStr:'15'))
+        buildDiscarder(logRotator(numToKeepStr:'5'))
     }
 
     environment {
@@ -44,10 +44,10 @@ pipeline {
 
         stage('SonarQube analysis') {
             tools {
-                SonarQube: 'hudson.plugins.sonar.SonarRunnerInstallation'
+                SonarRunnerInstallation 'SonarQubeScanner'
             }
             steps {
-                withSonarQubeEnv('SonarQube Scanner') {
+                withSonarQubeEnv('SonarQubeScanner') {
                     sh 'sonar-scanner'
                 }
             }
