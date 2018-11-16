@@ -1,7 +1,6 @@
 // JAVA_ARGS="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'unsafe-inline'; img-src * data:\""
 // System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'unsafe-inline';")
 System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts;")
-def scannerHome = tool 'SonarQube Scanner 3.2.0.1227';
 
 pipeline {
     agent { 
@@ -44,14 +43,14 @@ pipeline {
         // }
 
         stage('SonarQube analysis') {
-            // tools {
-            //     'hudson.plugins.sonar.SonarRunnerInstallation' 'SonarQubeScanner'
-            // }
+            tools {
+                'hudson.plugins.sonar.SonarRunnerInstallation' 'SonarQubeScanner'
+            }
 
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
-                    sh "${scannerHome}/bin/sonar-scanner"
+                    sh "SonarQubeScanner/bin/sonar-scanner"
                 }
             }
         }
