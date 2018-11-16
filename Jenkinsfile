@@ -4,19 +4,7 @@ System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-sc
 
 pipeline {
     agent { 
-        docker { image 'node:10.13' } 
-        node {
-            stage('SCM') {
-                git 'https://github.com/gsaini/nginx-performance-tooling.git'
-            }
-            stage('SonarQube analysis') {
-                // requires SonarQube Scanner 2.8+
-                def scannerHome = tool 'SonarQube Scanner 2.8';
-                withSonarQubeEnv('My SonarQube Server') {
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+        docker { image 'node:10.13' }
     }
 
     options {
@@ -51,6 +39,14 @@ pipeline {
                     reportName: "Lighthouse"
                 ])
                 }
+            }
+        }
+
+        stage('SonarQube analysis') {
+            // requires SonarQube Scanner 2.8+
+            def scannerHome = tool 'SonarQube Scanner 2.8';
+            withSonarQubeEnv('My SonarQube Server') {
+                sh "${scannerHome}/bin/sonar-scanner"
             }
         }
     }
