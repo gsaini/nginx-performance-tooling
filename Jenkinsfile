@@ -44,7 +44,7 @@ pipeline {
 
         stage('SonarQube analysis') {
             tools {
-                SonarQubeScanner 'SonarQube Scanner'
+                // sonarQube 'SonarQubeScanner'
             }
             steps {
                 sh 'printenv'
