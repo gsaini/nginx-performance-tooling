@@ -21,6 +21,7 @@ pipeline {
     stages {
         stage('test') {
             steps {
+                deleteDir()
                 checkout scm
                 sh 'npm install -d'
                 sh 'cd $(pwd)' 
