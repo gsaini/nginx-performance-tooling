@@ -1,0 +1,118 @@
+Environment variables:
+  - Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.6hc5L0puZv/Render
+  - CONDA_DEFAULT_ENV=base
+  - CONDA_EXE=/anaconda3/bin/conda
+  - CONDA_PREFIX=/anaconda3
+  - CONDA_PROMPT_MODIFIER=
+  - CONDA_PYTHON_EXE=/anaconda3/bin/python
+  - CONDA_SHLVL=1
+  - HOME=/Users/gopsaini
+  - JAVA_ARCH=x86_64
+  - JAVA_MAIN_CLASS_11094=org.sonarsource.scanner.cli.Main
+  - LANG=en_GB.UTF-8
+  - LOGNAME=gopsaini
+  - NVM_CD_FLAGS=
+  - NVM_DIR=/Users/gopsaini/.nvm
+  - PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/sbin:/anaconda3/bin
+  - PWD=/Users/gopsaini/Documents/sapient/Projects/nginx-getting-started
+  - SHELL=/bin/bash
+  - SHLVL=2
+  - SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.DAEIICf7NF/Listeners
+  - TERM=xterm-256color
+  - TERM_PROGRAM=vscode
+  - TERM_PROGRAM_VERSION=1.29.1
+  - TMPDIR=/var/folders/qf/5jvb9q3x2_xb_n46ryxb7400xrp7dd/T/
+  - USER=gopsaini
+  - XPC_FLAGS=0x0
+  - XPC_SERVICE_NAME=0
+  - __CF_USER_TEXT_ENCODING=0x3B8B1DAD:0x0:0x2
+  - com.apple.java.jvmTask=CommandLine
+System properties:
+  - awt.toolkit=sun.lwawt.macosx.LWCToolkit
+  - file.encoding=UTF-8
+  - file.encoding.pkg=sun.io
+  - file.separator=/
+  - gopherProxySet=false
+  - java.awt.graphicsenv=sun.awt.CGraphicsEnvironment
+  - java.awt.headless=true
+  - java.awt.printerjob=sun.lwawt.macosx.CPrinterJob
+  - java.class.path=/Users/gopsaini/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/lib/sonar-scanner-cli-3.2.0.1227.jar
+  - java.class.version=52.0
+  - java.endorsed.dirs=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/endorsed
+  - java.ext.dirs=/Users/gopsaini/Library/Java/Extensions:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/ext:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java
+  - java.home=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre
+  - java.io.tmpdir=/var/folders/qf/5jvb9q3x2_xb_n46ryxb7400xrp7dd/T/
+  - java.library.path=/Users/gopsaini/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:.
+  - java.runtime.name=Java(TM) SE Runtime Environment
+  - java.runtime.version=1.8.0_192-b12
+  - java.specification.name=Java Platform API Specification
+  - java.specification.vendor=Oracle Corporation
+  - java.specification.version=1.8
+  - java.vendor=Oracle Corporation
+  - java.vendor.url=http://java.oracle.com/
+  - java.vendor.url.bug=http://bugreport.sun.com/bugreport/
+  - java.version=1.8.0_192
+  - java.vm.info=mixed mode
+  - java.vm.name=Java HotSpot(TM) 64-Bit Server VM
+  - java.vm.specification.name=Java Virtual Machine Specification
+  - java.vm.specification.vendor=Oracle Corporation
+  - java.vm.specification.version=1.8
+  - java.vm.vendor=Oracle Corporation
+  - java.vm.version=25.192-b12
+  - line.separator=
+
+  - os.arch=x86_64
+  - os.name=Mac OS X
+  - os.version=10.13.6
+  - path.separator=:
+  - project.home=/Users/gopsaini/Documents/sapient/Projects/nginx-getting-started
+  - scanner.home=/Users/gopsaini/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner
+  - sun.arch.data.model=64
+  - sun.boot.class.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/classes
+  - sun.boot.library.path=/Library/Java/JavaVirtualMachines/jdk1.8.0_192.jdk/Contents/Home/jre/lib
+  - sun.cpu.endian=little
+  - sun.cpu.isalist=
+  - sun.io.unicode.encoding=UnicodeBig
+  - sun.java.command=org.sonarsource.scanner.cli.Main -X -Dsonar.projectKey=nginx_getting_started -Dsonar.sources=. -Dsonar.host.url=http://127.0.0.1:9000 -Dsonar.login=1997c1e72863f5c067d87629f76b881d8f9b97ba
+  - sun.java.launcher=SUN_STANDARD
+  - sun.jnu.encoding=UTF-8
+  - sun.management.compiler=HotSpot 64-Bit Tiered Compilers
+  - sun.os.patch.level=unknown
+  - user.country=GB
+  - user.dir=/Users/gopsaini/Documents/sapient/Projects/nginx-getting-started
+  - user.home=/Users/gopsaini
+  - user.language=en
+  - user.name=gopsaini
+  - user.timezone=Europe/London
+SonarQube plugins:
+  - SonarPython 1.10.0.2131 (python)
+  - SonarCSS 1.0.2.611 (cssfamily)
+  - JaCoCo 1.0.1.143 (jacoco)
+  - SonarGo 1.1.0.1612 (go)
+  - SonarKotlin 1.2.1.2009 (kotlin)
+  - Svn 1.9.0.1295 (scmsvn)
+  - SonarJS 5.0.0.6962 (javascript)
+  - SonarRuby 1.2.1.2009 (ruby)
+  - SonarC# 7.7.0.7192 (csharp)
+  - SonarJava 5.8.0.15699 (java)
+  - LDAP 2.2.0.608 (ldap)
+  - Git 1.6.0.1349 (scmgit)
+  - SonarFlex 2.4.0.1222 (flex)
+  - SonarXML 1.5.1.1452 (xml)
+  - SonarPHP 2.14.0.3569 (php)
+  - SonarTS 1.8.0.3332 (typescript)
+  - SonarVB 7.7.0.7192 (vbnet)
+Global properties:
+  - sonar.core.id=BF41A1F2-AWcc0TtxtfiJ9UdfwJGp
+  - sonar.core.startTime=2018-11-16T15:34:23+0000
+Settings for module: nginx_getting_started
+  - sonar.host.url=http://127.0.0.1:9000
+  - sonar.login=******
+  - sonar.projectBaseDir=/Users/gopsaini/Documents/sapient/Projects/nginx-getting-started
+  - sonar.projectKey=nginx_getting_started
+  - sonar.scanner.app=ScannerCli
+  - sonar.scanner.appVersion=3.2.0.1227
+  - sonar.sourceEncoding=UTF-8
+  - sonar.sources=.
+  - sonar.verbose=true
+  - sonar.working.directory=/Users/gopsaini/Documents/sapient/Projects/nginx-getting-started/.scannerwork
