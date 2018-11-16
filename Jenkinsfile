@@ -19,28 +19,28 @@ pipeline {
     }
 
     stages {
-        stage('test') {
-            steps {
-                deleteDir()
-                checkout scm
-                sh 'printenv'
-                sh 'npm install -d'
-                sh 'npm run lighthouse'
-            }
+        // stage('test') {
+        //     steps {
+        //         deleteDir()
+        //         checkout scm
+        //         sh 'printenv'
+        //         sh 'npm install -d'
+        //         sh 'npm run lighthouse'
+        //     }
 
-            post {
-                always {
-                publishHTML (target: [
-                    allowMissing: false,
-                    alwaysLinkToLastBuild: false,
-                    keepAll: true,
-                    reportDir: './reports/lighthouse',
-                    reportFiles: 'lighthouse-report.html',
-                    reportName: "Lighthouse"
-                ])
-                }
-            }
-        }
+        //     post {
+        //         always {
+        //         publishHTML (target: [
+        //             allowMissing: false,
+        //             alwaysLinkToLastBuild: false,
+        //             keepAll: true,
+        //             reportDir: './reports/lighthouse',
+        //             reportFiles: 'lighthouse-report.html',
+        //             reportName: "Lighthouse"
+        //         ])
+        //         }
+        //     }
+        // }
 
         stage('SonarQube analysis') {
             // requires SonarQube Scanner 2.8+
