@@ -4,6 +4,7 @@
   "description": "nginx & jenkins configuration",
   "main": "index.js",
   "scripts": {
+    "push": "sh ./git-push.sh",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lighthouse": "node_modules/lighthouse/lighthouse-cli/index.js --output-path=./reports/lighthouse/lighthouse-report.html --quiet --chrome-flags='--headless' https://kitconcept.com/blog"
   },
