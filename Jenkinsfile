@@ -53,7 +53,8 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
-                    sh "/Users/gopsaini/.jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/SonarQubeScanner/bin/sonar-scanner -X  -Dsonar.projectKey=nginx_getting_started   -Dsonar.sources=.   -Dsonar.host.url=http://127.0.0.1:9000   -Dsonar.login=1997c1e72863f5c067d87629f76b881d8f9b97ba"
+                    sh 'current dir -> ${PWD}'
+                    sh "${sonarqubeScannerHome}/bin/sonar-scanner -X"
                 }
             }
         }
