@@ -19,6 +19,7 @@ pipeline {
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
         sonarqubeScannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        SONAR_ENV = withSonarQubeEnv('SonarQubeScanner')
     }
 
     stages {
@@ -52,6 +53,7 @@ pipeline {
 
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
+                    sh 'printenv'
                     sh 'sonar-scanner'
                 }
             }
