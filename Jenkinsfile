@@ -21,6 +21,7 @@ pipeline {
         stage('test') {
             steps {
                 sh 'npm --version'
+                sh 'npm install'
                 sh 'printenv'
             }
         }
@@ -35,7 +36,7 @@ pipeline {
             steps {
                 deleteDir()
                 checkout scm
-                sh 'npm i -d'
+                sh 'npm install'
                 sh 'npm run lighthouse'
             }
             post {
