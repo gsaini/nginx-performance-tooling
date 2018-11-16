@@ -21,7 +21,7 @@ pipeline {
             steps {
                 echo "Branch is ${env.BRANCH_NAME}..."
         
-                withNPM(npmrcConfig:'my-custom-npmrc') {
+                withNPM() {
                     echo "Performing npm build..."
                     sh 'npm --version'
                     sh 'printenv'
