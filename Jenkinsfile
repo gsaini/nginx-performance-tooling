@@ -59,7 +59,6 @@ pipeline {
               reportFiles: 'lighthouse-report.html',
               reportName: 'Lighthouse'
             ])
-            }
         }
         failure {
             echo 'This will run only if failed'
