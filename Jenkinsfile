@@ -13,6 +13,7 @@ pipeline {
     }
 
     environment {
+        npm_config_cache='npm-cache'
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
     }
