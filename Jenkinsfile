@@ -7,6 +7,11 @@ pipeline {
         docker { image 'node:10.13' } 
     }
 
+    options {
+        // Only keep the 10 most recent builds
+        buildDiscarder(logRotator(numToKeepStr:'5'))
+    }
+
     environment {
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
