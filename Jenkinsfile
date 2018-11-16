@@ -8,7 +8,7 @@ pipeline {
     }
 
     options {
-        // Only keep the 10 most recent builds
+        // Only keep the 5 most recent builds
         buildDiscarder(logRotator(numToKeepStr:'5'))
     }
 
@@ -18,37 +18,37 @@ pipeline {
     }
 
     stages {
-        stage('build') {
+        stage('test') {
             steps {
                 sh 'npm --version'
                 sh 'printenv'
             }
         }
 
-        // stage('Performance Tests') {
-        //     agent {
-        //         label 'master'
-        //     }
-        //     when {
-        //         branch 'master'
-        //     }
-        //     steps {
-        //         sh 'npm i -d'
-        //         // sh 'npm run lighthouse'
-        //     }
-        //     post {
-        //         always {
-        //         publishHTML (target: [
-        //             allowMissing: false,
-        //             alwaysLinkToLastBuild: false,
-        //             keepAll: true,
-        //             reportDir: '.',
-        //             reportFiles: 'lighthouse-report.html',
-        //             reportName: "Lighthouse"
-        //         ])
-        //         }
-        //     }
-        // }
+        stage('Performance Tests') {
+            agent {
+                label 'feature/ci-pipiline'
+            }
+            when {
+                branch 'feature/ci-pipiline'
+            }
+            steps {
+                sh 'npm i -d'
+                sh 'npm run lighthouse'
+            }
+            post {
+                always {
+                publishHTML (target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: '.',
+                    reportFiles: 'lighthouse-report.html',
+                    reportName: "Lighthouse"
+                ])
+                }
+            }
+        }
     }
 
     post {
@@ -57,14 +57,6 @@ pipeline {
         }
         success {
             echo 'This will run only if successful'
-            publishHTML (target: [
-              allowMissing: false,
-              alwaysLinkToLastBuild: false,
-              keepAll: true,
-              reportDir: '.',
-              reportFiles: 'lighthouse-report.html',
-              reportName: 'Lighthouse'
-            ])
         }
         failure {
             echo 'This will run only if failed'
