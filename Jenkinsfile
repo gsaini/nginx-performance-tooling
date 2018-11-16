@@ -16,7 +16,7 @@ pipeline {
 
     environment {
         npm_config_cache='npm-cache'
-        SONARQUBE_SCANNER_HOME = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        sonarqubeHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
 
     stages {
@@ -51,7 +51,7 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
-                    sh 'sonar:sonar'
+                    sh '${sonarqubeHome}/bin/sonar-scanner -X'
                 }
             }
         }
