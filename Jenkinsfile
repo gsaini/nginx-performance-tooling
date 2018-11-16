@@ -1,6 +1,6 @@
 // JAVA_ARGS="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'unsafe-inline'; img-src * data:\""
-System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'unsafe-inline';")
-
+// System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'unsafe-inline';")
+System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts;")
 
 pipeline {
     agent { 
