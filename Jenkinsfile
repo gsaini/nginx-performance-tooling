@@ -18,6 +18,7 @@ pipeline {
         npm_config_cache='npm-cache'
         DISABLE_AUTH = 'true'
         DB_ENGINE    = 'sqlite'
+        sonarqubeScannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
 
     stages {
@@ -50,11 +51,8 @@ pipeline {
             }
 
             steps {
-                def sonarqubeScannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
-
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
-                    sh 'ls'
                     sh "${sonarqubeScannerHome}/bin/sonar-scanner"
                 }
             }
