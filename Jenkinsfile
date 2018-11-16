@@ -10,16 +10,13 @@ pipeline {
     }
 
     options {
-        // Only keep the 5 most recent builds
         timestamps()
-        buildDiscarder(logRotator(numToKeepStr:'15'))
+        buildDiscarder(logRotator(numToKeepStr:'15')) // Only keep the 5 most recent builds
     }
 
     environment {
         npm_config_cache='npm-cache'
-        DISABLE_AUTH = 'true'
-        DB_ENGINE    = 'sqlite'
-        sonarqubeScannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+        SONARQUBE_SCANNER_HOME = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
     }
 
     stages {
@@ -46,7 +43,7 @@ pipeline {
         //     }
         // }
 
-        stage('SonarQube analysis') {
+        stage('Static analysis') {
             tools {
                 'hudson.plugins.sonar.SonarRunnerInstallation' 'SonarQubeScanner'
             }
@@ -54,10 +51,12 @@ pipeline {
             steps {
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
-                    sh 'sonar-scanner'
+                    sh 'sonar:sonar'
                 }
             }
         }
+        stage('Build'){}
+        stage('Deploy'){}
     }
 
     post {
