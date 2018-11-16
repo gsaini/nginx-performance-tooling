@@ -22,7 +22,7 @@ pipeline {
         stage('test') {
             steps {
                 deleteDir()
-                sh 'cd $(pwd)'
+                sh 'cd ..'
                 checkout scm
                 sh 'npm install -d'
                 sh 'npm run lighthouse'
