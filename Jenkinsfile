@@ -44,10 +44,10 @@ pipeline {
 
         stage('SonarQube analysis') {
             tools {
-                SonarQube 'SonarQube Scanner'
+                sonarQube 'SonarQube Scanner'
             }
             steps {
-                withSonarQubeEnv('SonarQube') {
+                withSonarQubeEnv('SonarQube Scanner') {
                     sh 'sonar-scanner'
                 }
             }
