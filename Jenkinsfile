@@ -1,3 +1,5 @@
+#!/bin/groovy
+
 // JAVA_ARGS="-Dhudson.model.DirectoryBrowserSupport.CSP=\"sandbox allow-scripts; default-src 'unsafe-inline'; img-src * data:\""
 // System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox; default-src 'unsafe-inline';")
 System.setProperty("hudson.model.DirectoryBrowserSupport.CSP", "sandbox allow-scripts;")
@@ -48,10 +50,12 @@ pipeline {
             }
 
             steps {
+                def sonarqubeScannerHome = tool name: 'SonarQubeScanner', type: 'hudson.plugins.sonar.SonarRunnerInstallation'
+
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
                     sh 'ls'
-                    sh "sonar-scanner"
+                    sh "${sonarqubeScannerHome}/bin/sonar-scanner"
                 }
             }
         }
