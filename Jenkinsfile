@@ -13,16 +13,18 @@ pipeline {
 
     stages {
         stage('build') {
-            steps {
-                sh 'npm --version'
-                sh 'printenv'
-            }
+            // steps {
+            //     sh 'npm --version'
+            //     sh 'printenv'
+            // }
 
             steps {
                 echo "Branch is ${env.BRANCH_NAME}..."
         
                 withNPM(npmrcConfig:'my-custom-npmrc') {
                     echo "Performing npm build..."
+                    sh 'npm --version'
+                    sh 'printenv'
                     sh 'npm install'
                 }
             }
