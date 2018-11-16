@@ -43,14 +43,14 @@ pipeline {
         // }
 
         stage('SonarQube analysis') {
-            tools {
-                'hudson.plugins.sonar.SonarRunnerInstallation' 'SonarQubeScanner'
-            }
-
+            // tools {
+            //     'hudson.plugins.sonar.SonarRunnerInstallation' 'SonarQubeScanner'
+            // }
             steps {
+                def scannerHome = tool 'SonarQubeScanner'
                 withSonarQubeEnv('SonarQubeScanner') {
                     sh 'printenv'
-                    sh "SonarQubeScanner/bin/sonar-scanner"
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
