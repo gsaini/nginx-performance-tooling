@@ -44,7 +44,7 @@ pipeline {
 
         stage('SonarQube analysis') {
             tools {
-                SonarQube 'SonarQube Scanner 3.2.0.1227'
+                SonarQube 'SonarQube Scanner'
             }
             steps {
                 withSonarQubeEnv('SonarQube') {
