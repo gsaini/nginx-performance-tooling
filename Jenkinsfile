@@ -43,12 +43,13 @@ pipeline {
         // }
 
         stage('SonarQube analysis') {
-            script {
-                // requires SonarQube Scanner 3.2
-                scannerHome = tool 'SonarQube Scanner 3.2.0.1227'
+            tools {
+                sonarQube 'SonarQube Scanner 3.2.0.1227'
             }
-            withSonarQubeEnv('SonarQube Scanner') {
-                sh "${scannerHome}/bin/sonar-scanner"
+            steps {
+                withSonarQubeEnv('SonarQube') {
+                    sh 'sonar-scanner'
+                }
             }
         }
     }
