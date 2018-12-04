@@ -20,8 +20,9 @@ nginx -s stop  -p ./  -c nginx.conf
 
 ## how to add brotli module in nginx
 
+clone the git repo on local machine with --recursive argument not to miss any dependency...
 ```
-https://github.com/google/ngx_brotli
+git clone https://github.com/google/ngx_brotli --recursive
 ```
 
 ```
@@ -36,7 +37,7 @@ Copy everything after "configuration arguments:": ex -
 
 ```
 cd nginx-1.x.x
-./configure --add-module=/path/to/ngx_brotli $copied-arguments
+./configure --add-module=/path/to/ngx_brotli (**git cloned) copied-arguments(**as above)
 sudo make && sudo make install
 ```
 
